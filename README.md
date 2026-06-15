@@ -1,8 +1,13 @@
-# 🌐 C++ TCP Socket Programming Lab
+## 📖 Overview
 
-A cross-platform networking project built in C++ to demonstrate TCP client-server communication between Linux and Windows systems.
+This project implements a **reverse shell** communication channel between a **Linux-based C2 server** (operator) and a **Windows target client** (agent). The target initiates the connection back to the server, allowing remote command execution behind firewalls or NAT.
 
-> 📚 Educational project focused on learning socket programming, network communication, and client-server architecture.
+### How It Works
+
+1. **Server** listens on TCP port `4444` (all interfaces)
+2. **Client** connects back to the server's IP address
+3. Operator sends commands via the server console
+4. Client executes them via `cmd.exe` and returns output
 
 ---
 
