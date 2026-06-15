@@ -1,41 +1,144 @@
-# 🚀 Reverse Shell C2 Framework
+# 🌐 C++ TCP Socket Programming Lab
 
-A lightweight, cross-platform **Command & Control (C2)** framework for authorized penetration testing and security assessments. Built in C++ with raw socket programming.
+A cross-platform networking project built in C++ to demonstrate TCP client-server communication between Linux and Windows systems.
 
-> ⚠️ **LEGAL DISCLAIMER**  
-> This tool is intended **ONLY** for authorized security testing, educational purposes, and CTF challenges. Unauthorized access to computer systems is illegal. The author assumes no liability for misuse.
+> 📚 Educational project focused on learning socket programming, network communication, and client-server architecture.
 
 ---
 
 ## 📋 Table of Contents
 
-1. [Overview](#overview)
-2. [Architecture](#architecture)
-3. [Features](#features)
-4. [Installation & Compilation](#installation--compilation)
-5. [Usage Guide](#usage-guide)
-6. [Available Commands](#available-commands)
-7. [Network Setup (Bridged Mode)](#network-setup-bridged-mode)
-8. [Persistence & Evasion](#persistence--evasion)
-9. [Project Structure](#project-structure)
-10. [Testing Environment](#testing-environment)
-11. [Roadmap](#roadmap)
-12. [Contributing](#contributing)
-13. [License](#license)
+1. Overview
+2. Architecture
+3. Features
+4. Installation & Compilation
+5. Usage
+6. Project Structure
+7. Learning Objectives
+8. License
 
 ---
 
 ## 📖 Overview
 
-This project implements a **reverse shell** communication channel between a **Linux-based C2 server** (operator) and a **Windows target client** (agent). The target initiates the connection back to the server, allowing remote command execution behind firewalls or NAT.
+This project demonstrates the fundamentals of TCP/IP networking using C++ sockets.
 
-### How It Works
+The repository contains:
 
-1. **Server** listens on TCP port `4444` (all interfaces)
-2. **Client** connects back to the server's IP address
-3. Operator sends commands via the server console
-4. Client executes them via `cmd.exe` and returns output
+* A Linux TCP server
+* A Windows TCP client
+* Examples of sending and receiving messages
+* Basic connection management and error handling
 
 ---
 
 ## 🏗️ Architecture
+
+```text
+┌─────────────────────┐      TCP      ┌─────────────────────┐
+│     Linux Server    │ ◄──────────► │   Windows Client   │
+│    (Listener)       │              │    (Connector)     │
+└─────────────────────┘              └─────────────────────┘
+```
+
+---
+
+## ✨ Features
+
+* TCP communication
+* IPv4 networking
+* Cross-platform support
+* Socket creation and management
+* Error handling
+* Message exchange
+* Educational code structure
+
+---
+
+## 🔧 Installation & Compilation
+
+### Linux Server
+
+```bash
+g++ ServerOnLinux.cpp -o ServerOnLinux
+./ServerOnLinux
+```
+
+### Windows Client
+
+```powershell
+g++ ClientOnWindows.cpp -o client.exe -lws2_32
+```
+
+---
+
+## 🚀 Usage
+
+### Start the Server
+
+```bash
+./ServerOnLinux
+```
+
+### Run the Client
+
+```powershell
+.\client.exe
+```
+
+### Test Communication
+
+Once connected, messages can be exchanged between the client and server.
+
+---
+
+## 📁 Project Structure
+
+```text
+.
+├── ClientOnWindows.cpp
+├── ServerOnLinux.cpp
+├── README.md
+└── LICENSE
+```
+
+---
+
+## 🎯 Learning Objectives
+
+This project helps developers understand:
+
+* TCP/IP fundamentals
+* Socket programming
+* Client-server architecture
+* Cross-platform development
+* Network debugging
+* Error handling
+
+---
+
+## 🛠 Technologies
+
+* C++
+* GCC / G++
+* Winsock2
+* POSIX Sockets
+* Linux
+* Windows
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+Mustafa
+
+* C++
+* Linux
+* Cybersecurity
+* Networking
