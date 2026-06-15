@@ -42,7 +42,7 @@ The repository contains:
 ```text
 ┌─────────────────────┐      TCP      ┌─────────────────────┐
 │     Linux Server    │ ◄──────────►  │   Windows Client    │
-│    (Listener)       │               │    (Connector)      │
+│      (Listener)     │               │    (Connector)      │
 └─────────────────────┘               └─────────────────────┘
 ```
 
