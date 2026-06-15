@@ -36,33 +36,55 @@ The repository contains:
 
 ```text
 ┌─────────────────────┐      TCP      ┌─────────────────────┐
-│     Linux Server    │ ◄──────────► │   Windows Client   │
-│    (Listener)       │              │    (Connector)     │
-└─────────────────────┘              └─────────────────────┘
+│     Linux Server    │ ◄──────────►  │   Windows Client    │
+│    (Listener)       │               │    (Connector)      │
+└─────────────────────┘               └─────────────────────┘
 ```
+
+---
 
 ---
 
 ## ✨ Features
 
-* TCP communication
-* IPv4 networking
-* Cross-platform support
-* Socket creation and management
-* Error handling
-* Message exchange
-* Educational code structure
+### ✅ Current Features
+| Feature | Description |
+|---------|-------------|
+| **Reverse TCP Shell** | Target connects back to operator |
+| **Remote Command Execution** | Any Windows `cmd.exe` command |
+| **Directory Navigation** | `cd` with full path support |
+| **File Listing** | `dir` with any path (e.g., `dir C:\`) |
+| **File Deletion** | `rm`, `del`, `rmdir` support |
+| **View File Contents** | `type` / `cat` to read remote files |
+| **Cross-Platform** | Server on Linux, Client on Windows |
+| **Error Output** | Captures `stderr` via `2>&1` |
+| **Port Reuse** | `SO_REUSEADDR` for clean restarts |
+
+### 🔜 Planned Features
+- [ ] AES-256 encryption for C2 traffic
+- [ ] Multi-client session management
+- [ ] File upload/download
+- [ ] Keylogger & clipboard capture
+- [ ] Screenshot capture
+- [ ] PowerShell execution engine
+- [ ] DNS-over-HTTPS tunneling
 
 ---
 
 ## 🔧 Installation & Compilation
 
-### Linux Server
+### Prerequisites
 
+#### Linux (Server):
 ```bash
-g++ ServerOnLinux.cpp -o ServerOnLinux
-./ServerOnLinux
-```
+# Arch
+sudo pacman -S gcc
+
+# Debian/Kali/Ubuntu
+sudo apt install g++ make
+
+# Fedora
+sudo dnf install gcc-c++
 
 ### Windows Client
 
