@@ -91,9 +91,10 @@ sudo dnf install gcc-c++
 
 ### Windows Client
 
-```powershell
+```powershell OR cmd
 
-x86_64-w64-mingw32-g++ ClientOnWindows.cpp -o reverse.exe -lws2_32 -s```
+x86_64-w64-mingw32-g++ ClientOnWindows.cpp -o reverse.exe -lws2_32 -s
+```
 
 ---
 
